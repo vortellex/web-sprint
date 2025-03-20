@@ -6,26 +6,26 @@
     <title>Tayacan Watches</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background-color: hsl(196, 28%, 18%); color: #f4ebebe1; line-height: 1.6; }
+        body { font-family: 'Arial', sans-serif; background-color: hsl(188, 6%, 26%); color: #f4ebebe1; line-height: 1.4; }
 
         header { 
-            background-color: #70c7d7; 
+            background-color: #383d3d; 
             padding: 10px 20px; 
             display: flex; 
             justify-content: space-between; 
-            align-items: center; 
+            align-items: flex-start; 
             box-shadow: 0 2px 5px rgba(241, 239, 239, 0.967); 
         }
-        .logo img { height: 30px; }
+        .logo img { height: 70px; }
         header ul { 
             list-style: none; 
             display: flex; 
-            gap: 20px; 
-            align-items: center; 
+            gap: 10px; 
+            align-items: flex-start; 
         }
         header ul li a { 
             text-decoration: none; 
-            color: rgb(44, 63, 84); 
+            color: rgb(225, 232, 241); 
             font-weight: bold; 
             transition: color 0.3s ease; 
         }
@@ -37,7 +37,7 @@
             align-items: center;
         }
         .search-bar input[type="text"] {
-            padding: 8px;
+            padding: 20px;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
@@ -46,7 +46,7 @@
         .search-bar button {
             background-color: #ffd700;
             border: none;
-            padding: 8px 12px;
+            padding: 18px 22px;
             border-radius: 5px;
             margin-left: 5px;
             cursor: pointer;
@@ -60,15 +60,15 @@
             background: url('banner2.png') no-repeat center center/cover; 
             height: 75vh; 
             display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            align-items: flex-start; 
+            justify-content: flex-start; 
             text-align: center; 
             color: rgb(248, 232, 232); 
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .hero h1 { font-size: 7rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.6rem; max-width: 600px; margin: 0 auto; }
         .hero button { 
-            background-color: #ffd700; 
+            background-color: #89e797; 
             border: none; 
             padding: 10px 20px; 
             font-size: 1rem; 
@@ -81,17 +81,46 @@
             background-color: #e6c200; 
         }
 
-        .features, .about-us, .contact { padding: 40px 20px; text-align: center; }
+        .features, .about-us, .contact { padding: 60px 40px; text-align: center; }
         .features h2, .about-us h2, .contact h2 { font-size: 2rem; margin-bottom: 20px; }
         .features .feature-cards { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
         .features .card { 
-            background: rgba(77, 101, 102, 0.715); 
+            background: rgba(61, 76, 77, 0.715); 
             padding: 20px; 
             border-radius: 10px; 
             box-shadow: 0 2px 10px rgba(235, 223, 223, 0.902); 
             width: 30%; 
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
+
+        .features .card .price-buy-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.features .card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 0;
+}
+
+.features .card .buy-now {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.features .card .buy-now:hover {
+    background-color: #e6c200;
+    transform: scale(1.05);
+}
         .features .card:hover { 
             transform: translateY(-10px); 
             box-shadow: 0 4px 20px rgba(235, 223, 223, 0.902); 
@@ -103,8 +132,8 @@
         .about-us p, .contact p { font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
 
         footer { 
-            background-color: #70c7d7; 
-            color: rgb(12, 1, 1); 
+            background-color: #383d3d; 
+            color: rgb(244, 239, 239); 
             text-align: center; 
             padding: 20px; 
             margin-top: 40px; 
@@ -113,18 +142,49 @@
         footer .social-media a { 
             margin: 0 10px; 
             text-decoration: none; 
-            color: rgb(23, 3, 3); 
+            color: rgb(250, 242, 242); 
             font-size: 1.2rem; 
             transition: color 0.3s ease; 
         }
         footer .social-media a:hover { color: #ffd700; }
         footer p { margin: 5px 0; }
+
+        /* Additional Styling for New Content */
+        .craftsmanship, .technical-specs { 
+            padding: 40px 20px; 
+            text-align: left; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        .craftsmanship h2, .technical-specs h2 { 
+            font-size: 2rem; 
+            margin-bottom: 20px; 
+            text-align: center; 
+        }
+        .craftsmanship h3, .technical-specs h3 { 
+            font-size: 1.5rem; 
+            margin-top: 20px; 
+            color: #ebf4ee; 
+        }
+        .craftsmanship p, .technical-specs p { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin-bottom: 20px; 
+        }
+        .technical-specs ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .technical-specs ul li { 
+            margin-bottom: 10px; 
+            font-size: 1.1rem; 
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="img/banner.png" alt="Tayacan Watches Logo">
+            <img src="banner3.png" alt="Tayacan Watches Logo">
         </div>
         <ul>
             <li><a href="#">Home</a></li>
@@ -142,27 +202,27 @@
 
     <section class="hero">
         <div>
-            <h1>Tayacan </h1>
+            <h1>Tayacan</h1>
             <p>Discover the perfect blend of luxury and precision with Tayacan Watches. Crafted for those who value time.</p>
             <button>Shop Now</button>
         </div>
     </section>
 
     <section class="features">
-        <h2>Why Choose Tayacan ?</h2>
+        <h2>Why Choose Tayacan?</h2>
         <div class="feature-cards">
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Craftsmanship">
+                <img src="banner4.png" alt="Craftsmanship">
                 <h3>Exceptional Craftsmanship</h3>
                 <p>Each watch is meticulously crafted by skilled artisans using the finest materials.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Design">
+                <img src="banner5.png" alt="Design">
                 <h3>Timeless Design</h3>
                 <p>Our watches are designed to complement your style, no matter the occasion.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Precision">
+                <img src="banner6.png" alt="Precision">
                 <h3>Precision Engineering</h3>
                 <p>Powered by Swiss movements, our watches ensure unparalleled accuracy.</p>
             </div>
@@ -174,6 +234,116 @@
         <p>Tayacan Watches is a brand synonymous with luxury, precision, and timeless elegance. Founded in 2023, our mission is to create watches that not only tell time but also tell a story. Each piece is a testament to our commitment to quality and craftsmanship, designed for those who appreciate the finer things in life.</p>
     </section>
 
+    <section class="craftsmanship">
+        <h2>The Craftsmanship</h2>
+        <h3>A Legacy of Excellence</h3>
+        <p>Each Tayacan timepiece represents over 150 years of watchmaking tradition. Our master craftsmen spend up to 6 months creating a single watch, ensuring unparalleled quality and precision.</p>
+        <h3>Meticulous Attention to Detail</h3>
+        <p>Every component is hand-finished and polished to perfection. The movement consists of over 300 individual parts, each inspected under a microscope for flawless performance.</p>
+        <h3>Sustainable Luxury</h3>
+        <p>We source our materials ethically, using recycled precious metals and responsibly harvested leather. Each timepiece is designed to last generations, embodying our commitment to sustainable luxury.</p>
+        <h3>Limited Production</h3>
+        <p>We produce only 500 pieces annually, ensuring exclusivity and maintaining our rigorous quality standards. Each watch is individually numbered and comes with a certificate of authenticity.</p>
+    </section>
+
+    <section class="technical-specs">
+        <h2>Technical Specifications</h2>
+        <div class="specs-container">
+            <div class="specs-column">
+                <h3>Movement</h3>
+                <ul>
+                    <li>In-house automatic mechanical movement</li>
+                    <li>Power reserve: 72 hours</li>
+                    <li>28,800 vibrations per hour</li>
+                    <li>31 jewels</li>
+                </ul>
+            </div>
+            <div class="specs-column">
+                <h3>Case</h3>
+                <ul>
+                    <li>Diameter: 41mm</li>
+                    <li>Thickness: 12.5mm</li>
+                    <li>Water resistance: 100m</li>
+                    <li>Sapphire crystal with anti-reflective coating</li>
+                </ul>
+            </div>
+            
+            <div class="specs-column">
+                <h3>Warranty & Service</h3>
+                <ul>
+                    <li>5-year international warranty</li>
+                    <li>Complimentary first service</li>
+                    <li>Lifetime service support</li>
+                    <li>Worldwide service centers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+
+        <div class="feature-cards">
+            <div class="card">
+                <img src="banner4.png" alt="Craftsmanship">
+                <h3>Gold Strap</h3>
+                <p>Each watch is meticulously crafted by skilled artisans using the finest materials.</p>
+                <div class="price-buy-container">
+                    <p class="price">$1,499.00</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="banner5.png" alt="Design">
+                <h3>Gold  Dial</h3>
+                <p>Our watches are designed to complement your style, no matter the occasion.</p>
+                <div class="price-buy-container">
+                    <p class="price">$1,299.00</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="banner6.png" alt="Precision">
+                <h3>Complete Gold</h3>
+                <p>Powered by Swiss movements, our watches ensure unparalleled accuracy.</p>
+                <div class="price-buy-container">
+                    <p class="price">$1,799.00</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <style>
+        .technical-specs {
+            text-align: center;
+        }
+    
+        .specs-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+    
+        .specs-column {
+            flex: 1;
+            min-width: 200px; /* Ensures responsiveness */
+            text-align: left;
+        }
+    
+        h3 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+    
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Have questions or need assistance? We're here to help! Reach out to us via email at <a href="mailto:info@tayacanwatches.com">info@tayacanwatches.com</a> or call us at +1 (123) 456-7890. Our customer service team is available Monday to Friday, 9 AM to 5 PM.</p>
