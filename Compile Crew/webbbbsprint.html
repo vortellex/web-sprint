@@ -3,58 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperium Watches</title>
+    <title>Tayacan Watches</title>
     <style>
-       
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background-color: hsl(0, 33%, 98%); color: #333; line-height: 1.6; }
+        body { font-family: 'Arial', sans-serif; background-color: hsl(196, 28%, 18%); color: #f4ebebe1; line-height: 1.6; }
 
-        header { background-color: #b067d7; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(249, 244, 244, 0.967); }
-        .logo img { height: 40px; }
-        header ul { list-style: none; display: flex; gap: 20px; }
-        header ul li a { text-decoration: none; color: rgb(249, 242, 242); font-weight: bold; transition: color 0.3s ease; }
+        header { 
+            background-color: #70c7d7; 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 5px rgba(241, 239, 239, 0.967); 
+        }
+        .logo img { height: 30px; }
+        header ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        header ul li a { 
+            text-decoration: none; 
+            color: rgb(44, 63, 84); 
+            font-weight: bold; 
+            transition: color 0.3s ease; 
+        }
         header ul li a:hover { color: #ffd700; }
 
-      
-        .hero { background: url('img/banner.png') no-repeat center center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: rgb(83, 39, 39); }
+        /* Search Bar Styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-bar button {
+            background-color: #ffd700;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #e6c200;
+        }
+
+        .hero { 
+            background: url('banner2.png') no-repeat center center/cover; 
+            height: 75vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: rgb(248, 232, 232); 
+        }
         .hero h1 { font-size: 3rem; margin-bottom: 10px; }
         .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .hero button { 
+            background-color: #ffd700; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+        }
+        .hero button:hover { 
+            transform: scale(1.1); 
+            background-color: #e6c200; 
+        }
 
-        .features { padding: 40px 20px; text-align: center; }
-        .features h2 { font-size: 2rem; margin-bottom: 20px; }
+        .features, .about-us, .contact { padding: 40px 20px; text-align: center; }
+        .features h2, .about-us h2, .contact h2 { font-size: 2rem; margin-bottom: 20px; }
         .features .feature-cards { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-        .features .card { background: rgb(213, 207, 207); padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 30%; }
+        .features .card { 
+            background: rgba(77, 101, 102, 0.715); 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(235, 223, 223, 0.902); 
+            width: 30%; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .features .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 4px 20px rgba(235, 223, 223, 0.902); 
+        }
         .features .card img { width: 100%; border-radius: 10px; }
         .features .card h3 { font-size: 1.5rem; margin: 10px 0; }
-        .features .card p { font-size: 1rem; color: #666; }
+        .features .card p { font-size: 1rem; color: #f6f1f1; }
 
-        footer { background-color: #b067d7; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-        footer p { margin: 0; }
+        .about-us p, .contact p { font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        footer { 
+            background-color: #70c7d7; 
+            color: rgb(12, 1, 1); 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 40px; 
+        }
+        footer .social-media { margin-bottom: 10px; }
+        footer .social-media a { 
+            margin: 0 10px; 
+            text-decoration: none; 
+            color: rgb(23, 3, 3); 
+            font-size: 1.2rem; 
+            transition: color 0.3s ease; 
+        }
+        footer .social-media a:hover { color: #ffd700; }
+        footer p { margin: 5px 0; }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="img/banner.png" alt="Imperium Watches Logo">
+            <img src="img/banner.png" alt="Tayacan Watches Logo">
         </div>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <button type="submit">Search</button>
+                </div>
+            </li>
         </ul>
     </header>
 
     <section class="hero">
         <div>
-            <h1>Timeless Elegance</h1>
-            <p>Discover the perfect blend of luxury and precision with Imperium Watches. Crafted for those who value time.</p>
-            <button style="background-color: #ffd700; border: none; padding: 10px 20px; font-size: 1rem; cursor: pointer; margin-top: 20px;">Shop Now</button>
+            <h1>Tayacan </h1>
+            <p>Discover the perfect blend of luxury and precision with Tayacan Watches. Crafted for those who value time.</p>
+            <button>Shop Now</button>
         </div>
     </section>
 
     <section class="features">
-        <h2>Why Choose Imperium Watches?</h2>
+        <h2>Why Choose Tayacan ?</h2>
         <div class="feature-cards">
             <div class="card">
                 <img src="https://via.placeholder.com/300x200" alt="Craftsmanship">
@@ -74,8 +169,24 @@
         </div>
     </section>
 
+    <section id="about" class="about-us">
+        <h2>About Us</h2>
+        <p>Tayacan Watches is a brand synonymous with luxury, precision, and timeless elegance. Founded in 2023, our mission is to create watches that not only tell time but also tell a story. Each piece is a testament to our commitment to quality and craftsmanship, designed for those who appreciate the finer things in life.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance? We're here to help! Reach out to us via email at <a href="mailto:info@tayacanwatches.com">info@tayacanwatches.com</a> or call us at +1 (123) 456-7890. Our customer service team is available Monday to Friday, 9 AM to 5 PM.</p>
+    </section>
+
     <footer>
-        <p>&copy; 2023 Imperium Watches. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <p>&copy; 2025 Tayacan Watches. All rights reserved.</p>
+        <p>Privacy Policy | Terms of Service</p>
     </footer>
 </body>
 </html>
